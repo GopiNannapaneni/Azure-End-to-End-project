@@ -1,0 +1,41 @@
+{
+	"name": "ds_discounts_bronzesource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_gen2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cp_source": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat('discounts/',formatDateTime(dataset().cp_source,'yyyy'),'/',formatDateTime(dataset().cp_source,'MM'),'/',formatDateTime(dataset().cp_source,'dd'))\n\n",
+					"type": "Expression"
+				},
+				"fileSystem": "bronze"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "cid",
+				"type": "String"
+			},
+			{
+				"name": "discount",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

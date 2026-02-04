@@ -1,0 +1,48 @@
+{
+	"name": "pl_finaldataflow",
+	"properties": {
+		"activities": [
+			{
+				"name": "Data flow1",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "final_dataflow",
+						"type": "DataFlowReference",
+						"datasetParameters": {
+							"source1": {
+								"sourcedataset": {
+									"value": "@utcNow()",
+									"type": "Expression"
+								}
+							},
+							"source2": {
+								"sourcedataset": {
+									"value": "@utcNow()",
+									"type": "Expression"
+								}
+							}
+						}
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-02-04T19:36:45Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

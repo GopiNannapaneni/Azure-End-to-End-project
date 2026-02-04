@@ -1,0 +1,13 @@
+{
+	"name": "Ds_sqlservder_lookup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_sqldatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

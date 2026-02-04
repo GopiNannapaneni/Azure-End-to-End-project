@@ -1,0 +1,45 @@
+{
+	"name": "ds_orders_goldsourcedataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_gen2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sourcedataset": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat('orders/',formatDateTime(dataset().sourcedataset,'yyyy'),'/',formatDateTime(dataset().sourcedataset,'MM'),'/',formatDateTime(dataset().sourcedataset,'dd'))",
+					"type": "Expression"
+				},
+				"fileSystem": "silver"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "oid",
+				"type": "String"
+			},
+			{
+				"name": "ordername",
+				"type": "String"
+			},
+			{
+				"name": "cid",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

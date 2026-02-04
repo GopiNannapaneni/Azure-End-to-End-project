@@ -1,0 +1,9 @@
+{
+	"name": "datafactoryadfprojectgk",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b842f852-65f0-493f-8254-55ea0510b4c9",
+		"tenantId": "dcefcf71-5437-40d4-819b-6a40df4fd8ea"
+	}
+}

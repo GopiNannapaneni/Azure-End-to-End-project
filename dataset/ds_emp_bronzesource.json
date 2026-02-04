@@ -1,0 +1,45 @@
+{
+	"name": "ds_emp_bronzesource",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Ls_gen2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cp_source": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@concat('emp/',formatDateTime(dataset().cp_source,'yyyy'),'/',formatDateTime(dataset().cp_source,'MM'),'/',formatDateTime(dataset().cp_source,'dd'))",
+					"type": "Expression"
+				},
+				"fileSystem": "bronze"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "empid",
+				"type": "String"
+			},
+			{
+				"name": "empname",
+				"type": "String"
+			},
+			{
+				"name": "empsalary",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
