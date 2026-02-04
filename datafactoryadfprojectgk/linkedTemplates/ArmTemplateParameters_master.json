@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactoryadfprojectgk"
+		},
+		"AzureSynapseAnalytics1_password": {
+			"value": ""
+		},
+		"Ls_gen2_accountKey": {
+			"value": ""
+		},
+		"Ls_sqldatabase_password": {
+			"value": ""
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_server": {
+			"value": "myadfprojectsqlgk.database.windows.net"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_database": {
+			"value": "sqlpooladfprojerct "
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_userName": {
+			"value": "gopikrishna"
+		},
+		"Ls_gen2_properties_typeProperties_url": {
+			"value": "https://adfprojectstorageacctgk.dfs.core.windows.net/"
+		},
+		"Ls_keyvault_properties_typeProperties_baseUrl": {
+			"value": "https://vaultadfprojectgkk.vault.azure.net/"
+		},
+		"Ls_sqldatabase_properties_typeProperties_server": {
+			"value": "myadfprojectsql.database.windows.net"
+		},
+		"Ls_sqldatabase_properties_typeProperties_database": {
+			"value": "adfprojectsqlgk"
+		},
+		"Ls_sqldatabase_properties_typeProperties_userName": {
+			"value": "gopikrishna"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
